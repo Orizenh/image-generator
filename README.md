@@ -1,6 +1,6 @@
-# 🌌 AI.mage - Universal Image Synthesis Engine
+# 🌌 Nova.mage - Universal Image Synthesis Engine
 
-AI.mage is a premium, high-fidelity AI image generator application built on Svelte 5 and SvelteKit. It leverages public GPU clusters via **Pollinations AI** to dynamically synthesize high-resolution imagery from text prompts with zero authentication barriers.
+Nova.mage is a premium, high-fidelity AI image generator application built on Svelte 5 and SvelteKit. It leverages public GPU clusters via **Pollinations AI** to dynamically synthesize high-resolution imagery from text prompts with zero authentication barriers.
 
 The interface features stunning glassmorphism, drifting ambient HSL glow backdrops, a revolving custom animated SVG brand logo, interactive click-to-apply style presets, and fluid hover-activated controls for direct offline downloads.
 

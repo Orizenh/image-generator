@@ -1,5 +1,7 @@
 <script>
-  let { history = [] } = $props();
+  import { slugifyPrompt } from './utils.js';
+
+  let { history = [], onRemove } = $props();
 
   async function downloadImage(url, prompt) {
     try {
@@ -9,7 +11,7 @@
       
       const link = document.createElement('a');
       link.href = blobUrl;
-      const safeName = prompt.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50) || 'generated-image';
+      const safeName = slugifyPrompt(prompt);
       link.download = `${safeName}.jpg`;
       
       document.body.appendChild(link);
@@ -40,6 +42,9 @@
             <a href={item.url} target="_blank" rel="noreferrer" class="control-btn mini-btn link-btn" title="Open in New Tab">
               ↗
             </a>
+            <button onclick={() => onRemove(item.url)} class="control-btn mini-btn delete-btn" title="Remove from History">
+              🗑️
+            </button>
           </div>
         </div>
       {/each}

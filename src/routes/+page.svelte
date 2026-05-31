@@ -16,6 +16,11 @@
     history = [newItem, ...history];
     localStorage.setItem('imageHistory', JSON.stringify(history));
   }
+
+  function handleRemoveItem(url) {
+    history = history.filter(item => item.url !== url);
+    localStorage.setItem('imageHistory', JSON.stringify(history));
+  }
 </script>
 
 <div class="app-container">
@@ -40,7 +45,7 @@
         <circle cx="50" cy="50" r="5" fill="#ffffff" filter="url(#glow)" />
       </svg>
       <div class="logo-text">
-        <h1>AI<span>.mage</span></h1>
+        <h1>Nova<span>.mage</span></h1>
         <p>Universal Image Synthesis Engine</p>
       </div>
     </div>
@@ -48,6 +53,6 @@
 
   <main style="display: flex; flex-direction: column; gap: 2.5rem;">
     <ImageGenerator onGenerate={handleNewGeneration} />
-    <HistoryGallery {history} />
+    <HistoryGallery {history} onRemove={handleRemoveItem} />
   </main>
 </div>
